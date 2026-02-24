@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Gargi </title>
+
+  <!-- Aesthetic Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Poppins:wght@300;400&family=Sacramento&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #fce7f3, #e0f2fe);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Sacramento', cursive;
+      font-size: 3rem;
+      color: #a855f7;
+      margin-bottom: 20px;
+    }
+
+    /* Envelope */
+    .envelope {
+      width: 260px;
+      height: 170px;
+      background: #fde2e4;
+      position: relative;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .envelope:hover {
+      transform: scale(1.05);
+    }
+
+    .envelope::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fbcfe8;
+      clip-path: polygon(0 0, 50% 60%, 100% 0, 100% 100%, 0 100%);
+      border-radius: 10px;
+    }
+
+    .envelope span {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      color: #7c3aed;
+      font-size: 1.1rem;
+    }
+
+    /* Letter */
+    .letter {
+      display: none;
+      max-width: 700px;
+      background: #fffafc;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      animation: openLetter 1s ease forwards;
+    }
+
+    @keyframes openLetter {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .letter p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #374151;
+      white-space: pre-line;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-family: 'Sacramento', cursive;
+      font-size: 2rem;
+      color: #db2777;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>For You, Gargi 💗</h1>
+
+  <div class="envelope" onclick="openLetter()">
+    <span>Click to open 🕊️</span>
+  </div>
+
+  <div class="letter" id="letter">
+    <p>
+<p>
+Ik Gargi u hv faced a lot and u r facing many problems rn.
+I hv hurt u and many silent battles which u r fighting alone,
+but remember u r not alone.
+
+Ik our journey is not easy ups and downs, fights, arguments,
+everything will be there. It will feel like giving up,
+but pls don’t give up.
+
+I'm working on all my thoughts and overthinking.
+Ik teko bahot hurt hota hai,
+but I'm gonna work and fix all those parts of mine which hurts u.
+
+But I'm not giving up on u and on us.
+No matter how much we fight, how much problems we face,
+I'll still choose us over anything else.
+
+Ik we r still kids trying to be our best.
+In these hard days I promise to stay loyal, calm and patient with u.
+
+Ur Monti is trying his best to be the man u want.
+Jst tell me this time everything will be way u want.
+
+Sometimes there is lack of understanding but pls teach me.
+I want us. I want u forever.
+I promise to choose u in hard times.
+
+I'll be my best for u.
+In ur silence, ur silent battles u r facing alone,
+but always remember mai hu na 🫂
+</p>
+    </p>
+
+    <div class="signature">
+      Always yours,<br>
+      Monti 
+    </div>
+  </div>
+</div>
+
+<audio id="song" src="sorry.mp3"></audio>
+
+<script>
+  function openLetter() {
+    document.querySelector('.envelope').style.display = 'none';
+    document.getElementById('letter').style.display = 'block';
+
+    const song = document.getElementById('song');
+    song.play();
+  }
+</script>
+
+</body>
+</html>
