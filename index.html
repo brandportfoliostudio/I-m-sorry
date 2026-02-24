@@ -1,176 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>For Gargi </title>
+<meta charset="UTF-8">
+<title>For Gargi</title>
 
-  <!-- Aesthetic Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Poppins:wght@300;400&family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #fce7f3, #e0f2fe);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Poppins', sans-serif;
-    }
+body{
+  height:100vh;
+  background:
+    radial-gradient(circle at top, #fdf2f8, #eef2ff),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.015),
+      rgba(0,0,0,0.015) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Inter',sans-serif;
+  color:#1f2937;
+}
 
-    .container {
-      text-align: center;
-    }
+.container{text-align:center}
 
-    h1 {
-      font-family: 'Sacramento', cursive;
-      font-size: 3rem;
-      color: #a855f7;
-      margin-bottom: 20px;
-    }
+h1{
+  font-family:'Playfair Display',serif;
+  font-weight:400;
+  font-size:2.4rem;
+  margin-bottom:32px;
+  opacity:0;
+  animation:fadeIn 1.4s forwards;
+}
 
-    /* Envelope */
-    .envelope {
-      width: 260px;
-      height: 170px;
-      background: #fde2e4;
-      position: relative;
-      cursor: pointer;
-      border-radius: 10px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
+.envelope{
+  width:260px;
+  height:170px;
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 30px 70px rgba(0,0,0,0.15);
+  position:relative;
+  cursor:pointer;
+  animation:float 4s ease-in-out infinite;
+}
 
-    .envelope:hover {
-      transform: scale(1.05);
-    }
+.flap{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,#fbcfe8,#e9d5ff);
+  clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);
+  transform-origin:top;
+  transition:transform 1s ease;
+  border-radius:14px;
+}
 
-    .envelope::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #fbcfe8;
-      clip-path: polygon(0 0, 50% 60%, 100% 0, 100% 100%, 0 100%);
-      border-radius: 10px;
-    }
+.envelope.open .flap{
+  transform:rotateX(180deg);
+}
 
-    .envelope span {
-      position: absolute;
-      bottom: 15px;
-      width: 100%;
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      color: #7c3aed;
-      font-size: 1.1rem;
-    }
+.envelope-text{
+  position:absolute;
+  bottom:18px;
+  width:100%;
+  text-align:center;
+  font-size:.95rem;
+  letter-spacing:.6px;
+  color:#6b7280;
+}
 
-    /* Letter */
-    .letter {
-      display: none;
-      max-width: 700px;
-      background: #fffafc;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-      animation: openLetter 1s ease forwards;
-    }
+.letter{
+  display:none;
+  max-width:760px;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(14px);
+  border-radius:26px;
+  padding:56px;
+  box-shadow:0 50px 100px rgba(0,0,0,0.18);
+  animation:letterReveal 1.2s ease forwards;
+}
 
-    @keyframes openLetter {
-      from {
-        opacity: 0;
-        transform: translateY(40px) scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
+.letter p{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;
+  line-height:1.95;
+  white-space:pre-line;
+  color:#374151;
+}
 
-    .letter p {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #374151;
-      white-space: pre-line;
-    }
+.signature{
+  margin-top:36px;
+  text-align:right;
+  font-weight:500;
+  color:#6b21a8;
+}
 
-    .signature {
-      margin-top: 30px;
-      font-family: 'Sacramento', cursive;
-      font-size: 2rem;
-      color: #db2777;
-      text-align: right;
-    }
-  </style>
+@keyframes fadeIn{to{opacity:1}}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+@keyframes letterReveal{
+  from{opacity:0;transform:translateY(60px) scale(.95)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+</style>
 </head>
 <body>
 
 <div class="container">
-  <h1>For You, Gargi 💗</h1>
+  <h1>For You, Gargi</h1>
 
-  <div class="envelope" onclick="openLetter()">
-    <span>Click to open 🕊️</span>
+  <div class="envelope" id="envelope" onclick="openLetter()">
+    <div class="flap"></div>
+    <div class="envelope-text">Open the letter</div>
   </div>
 
   <div class="letter" id="letter">
-    <p>
-<p>
-Ik Gargi u hv faced a lot and u r facing many problems rn.
-I hv hurt u and many silent battles which u r fighting alone,
-but remember u r not alone.
-
-Ik our journey is not easy ups and downs, fights, arguments,
-everything will be there. It will feel like giving up,
-but pls don’t give up.
-
-I'm working on all my thoughts and overthinking.
-Ik teko bahot hurt hota hai,
-but I'm gonna work and fix all those parts of mine which hurts u.
-
-But I'm not giving up on u and on us.
-No matter how much we fight, how much problems we face,
-I'll still choose us over anything else.
-
-Ik we r still kids trying to be our best.
-In these hard days I promise to stay loyal, calm and patient with u.
-
-Ur Monti is trying his best to be the man u want.
-Jst tell me this time everything will be way u want.
-
-Sometimes there is lack of understanding but pls teach me.
-I want us. I want u forever.
-I promise to choose u in hard times.
-
-I'll be my best for u.
-In ur silence, ur silent battles u r facing alone,
-but always remember mai hu na 🫂
-</p>
-    </p>
-
-    <div class="signature">
-      Always yours,<br>
-      Monti 
-    </div>
+    <p id="text"></p>
+    <div class="signature">Monti</div>
   </div>
 </div>
 
 <audio id="song" src="sorry.mp3"></audio>
 
 <script>
-  function openLetter() {
-    document.querySelector('.envelope').style.display = 'none';
-    document.getElementById('letter').style.display = 'block';
+const message = `Ik Gargi u hv faced a lot and u r facing many problems rn
+i hv hurt u and many silent battles which u r fighting alone
+but remember u r not alone..ik our journey is not easy ups and downs
+fights arguments everything will be there it will feel like giving up
+but pls dont give up..I'm working on all my thoughts and overthinking
+ik teko bahot hurt hota hai but I'm gonna work and fix all those parts
+of mine which hurts u.. but I'm not giving up on u and on us no matter
+how much we fight how much problems we face I'll still choose us over
+anything else..ik we r still kids trying to be our best..in these hard
+days i promise to stay loyal calm and patient with u ..ur monti is
+trying his best to be the man u want jst tell me this time everything
+will be way u want.. sometimes there is lack of understanding but pls
+teach me..i want us i want u forever i promise to choose u in hard
+times..ik I'm not perfect no one is perfect we cant be perfect but by 
+fixing things and 
+working on it we can be better..teach me and I'll be my best for u..
+in ur silence ur silent battles u r
+facing alone..but always remember mai hu na 🫂`;
 
-    const song = document.getElementById('song');
-    song.play();
-  }
+function openLetter(){
+  const env=document.getElementById('envelope');
+  env.classList.add('open');
+
+  setTimeout(()=>{
+    env.style.display='none';
+    document.getElementById('letter').style.display='block';
+    typeText();
+    playMusic();
+  },900);
+}
+
+function typeText(){
+  let i=0;
+  const target=document.getElementById('text');
+  const interval=setInterval(()=>{
+    target.textContent+=message[i];
+    i++;
+    if(i>=message.length) clearInterval(interval);
+  },25);
+}
+
+function playMusic(){
+  const song=document.getElementById('song');
+  song.volume=0;
+  song.play();
+  let v=0;
+  const fade=setInterval(()=>{
+    if(v<1){v+=0.04;song.volume=v}
+    else clearInterval(fade);
+  },200);
+}
 </script>
 
 </body>
